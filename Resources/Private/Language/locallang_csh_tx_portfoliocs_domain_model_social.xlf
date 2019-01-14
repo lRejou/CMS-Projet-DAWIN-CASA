@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-01-14T16:39:21Z" product-name="portfolio_cs">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>nome</source>
+			</trans-unit>
+			<trans-unit id="identity.description">
+				<source>identifiant</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

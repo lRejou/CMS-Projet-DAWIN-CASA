@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-01-14T16:39:21Z" product-name="portfolio_cs">
+		<header/>
+		<body>
+			<trans-unit id="job_name.description">
+				<source>poste</source>
+			</trans-unit>
+			<trans-unit id="company_name.description">
+				<source>nom de l&#039;entreprise</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>Fiche poste</source>
+			</trans-unit>
+			<trans-unit id="date_start.description">
+				<source>Date de debut</source>
+			</trans-unit>
+			<trans-unit id="date_end.description">
+				<source>Date de fin</source>
+			</trans-unit>
+			<trans-unit id="contract.description">
+				<source>type de contrat</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>localisation</source>
+			</trans-unit>
+			<trans-unit id="skills.description">
+				<source>Compétences</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,28 @@
+{
+    "name": "cs/portfolio-cs",
+    "type": "typo3-cms-extension",
+    "description": "Portfolio",
+    "authors": [
+        {
+            "name": "Julien VITTE",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "CS\\PortfolioCs\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CS\\PortfolioCs\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "portfolio_cs": "self.version",
+        "typo3-ter/portfolio-cs": "self.version"
+    }
+}

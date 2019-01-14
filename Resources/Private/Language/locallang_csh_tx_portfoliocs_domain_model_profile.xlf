@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-01-14T16:39:21Z" product-name="portfolio_cs">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>Prenom</source>
+			</trans-unit>
+			<trans-unit id="lastname.description">
+				<source>Nom </source>
+			</trans-unit>
+			<trans-unit id="birth_day.description">
+				<source>Date de naissance</source>
+			</trans-unit>
+			<trans-unit id="driving_licence.description">
+				<source>Moyen de transport</source>
+			</trans-unit>
+			<trans-unit id="phone.description">
+				<source>Numéro de téléphone</source>
+			</trans-unit>
+			<trans-unit id="mail.description">
+				<source>Adresse de courriel élécronique sur un ordinateur personnel</source>
+			</trans-unit>
+			<trans-unit id="address.description">
+				<source>adresse</source>
+			</trans-unit>
+			<trans-unit id="photo.description">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="projects.description">
+				<source>projets</source>
+			</trans-unit>
+			<trans-unit id="jobs.description">
+				<source>jobs</source>
+			</trans-unit>
+			<trans-unit id="socials.description">
+				<source>réseaux sociaux</source>
+			</trans-unit>
+			<trans-unit id="training.description">
+				<source>Formation</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
