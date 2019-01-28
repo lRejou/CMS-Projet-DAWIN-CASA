@@ -21,6 +21,15 @@ namespace CS\PortfolioCs\Controller;
  */
 class TrainingController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+
+     /**
+     * trainingRepository
+     * 
+     * @var \CS\PortfolioCs\Domain\Repository\TrainingRepository
+     * @inject
+     */
+    protected $trainingRepository = null;
+
     /**
      * action list
      * 
@@ -30,6 +39,17 @@ class TrainingController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     {
         $trainings = $this->trainingRepository->findAll();
         $this->view->assign('trainings', $trainings);
+    }
+
+    /**
+     * action new
+     * 
+     * @param \CS\PortfolioCs\Domain\Model\Training $training
+     * @return void
+     */
+    public function newAction(\CS\PortfolioCs\Domain\Model\Training $training)
+    {
+        $this->view->assign('training', $training);
     }
 
     /**

@@ -13,38 +13,21 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-		<h1>Listing for Training</h1>
+	<div class="container">
+		<div class="row">
+			<h1 class="col-xl-12">Listing for Training</h1>
+		</div>
 
-		<f:flashMessages />
-
-		<table  class="tx_portfoliocs" >
-			<tr>
-				<th><f:translate key="tx_portfoliocs_domain_model_training.domain" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_training.date_start" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_training.date_end" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_training.degree" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_training.lication" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_training.title" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_training.description" /></th>
-				<th> </th>
-				<th> </th>
-			</tr>
-
-			<f:for each="{trainings}" as="training">
-				<tr>
-					<td><f:link.action action="show" arguments="{training : training}"> {training.domain}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{training : training}"> {training.dateStart -> f:format.date()}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{training : training}"> {training.dateEnd -> f:format.date()}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{training : training}"> {training.degree}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{training : training}"> {training.lication}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{training : training}"> {training.title}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{training : training}"> {training.description}</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{training : training}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{training : training}">Delete</f:link.action></td>
-				</tr>
-			</f:for>
-		</table>
-
-		<f:link.action action="new">New Training</f:link.action>
+			<f:flashMessages />
+			<f:widget.paginate objects="{trainings}" as="paginatedTrainings"  configuration="{itemsPerPage: 5, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 10}">
+				<f:for each="{paginatedTrainings}" as="training">
+					<div class="row">
+						<h2 class="xl-12">{training.title}</h2>
+						<h3><f:format.raw>{training.description} </f:format.raw> </h3>
+						<f:link.action action="show" arguments="{training : training}">View</f:link.action>
+					</div>
+				</f:for>
+			 </f:widget.paginate>
+		</div>
 	</f:section>
 </html>

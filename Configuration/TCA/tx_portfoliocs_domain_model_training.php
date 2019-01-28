@@ -113,7 +113,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['-- Label --', 0],
+                    ['Informatique', 0],['Médecine',1],['Environnement',2]
                 ],
                 'size' => 1,
                 'maxitems' => 1,

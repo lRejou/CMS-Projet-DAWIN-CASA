@@ -13,11 +13,41 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-		<h1>Single View for Training</h1>
+	<div class="container-fluid d-flex justify-content-center align-items-center ">
+		<h1 class="row col-sm-12 text-center">{training.title}</h1>
 
 		<f:flashMessages />
-		<f:render partial="Training/Properties" arguments="{training:training}" />
+		
+			<div class="row">
+				<f:translate key="tx_portfoliocs_domain_model_training.domain" />
+				 {training.domain} </div>
+			
+			<div class="row">
+				<f:translate key="tx_portfoliocs_domain_model_training.date_start" />
+				 {training.dateStart -> f:format.date()} </div>
+			
+			<div class="row">
+				<f:translate key="tx_portfoliocs_domain_model_training.date_end" />
+				 {training.dateEnd -> f:format.date()} </div>
+			
+			<div class="row">
+				<f:translate key="tx_portfoliocs_domain_model_training.degree" />
+				 {training.degree} </div>
+			
+			<div class="row">
+				<f:translate key="tx_portfoliocs_domain_model_training.lication" />
+				 {training.lication} </div>
+			
+			<div class="row">
+				<f:translate key="tx_portfoliocs_domain_model_training.description" />	
+				 <f:format.raw>{training.description} </f:format.raw> </div>
+			
+		
+
+
+
+
 		<f:link.action action="list">Back to list</f:link.action><br />
-		<f:link.action action="new">New Training</f:link.action>
+	</div>
 	</f:section>
 </html>
