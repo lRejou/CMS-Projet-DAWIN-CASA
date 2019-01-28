@@ -113,7 +113,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['Informatique', 0],['Médecine',1],['Environnement',2]
+                    ['Informatique', 0],['Médecine',1],['Environnement',2],['Transport',3],['Sport',4],['Litterature',5]
                 ],
                 'size' => 1,
                 'maxitems' => 1,
@@ -149,7 +149,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['-- Label --', 0],
+                    ['Bac', 0],['Bac +1', 1],['Bac+2', 2],['Licence', 3],['Master', 4],['Doctorat', 5]
                 ],
                 'size' => 1,
                 'maxitems' => 1,

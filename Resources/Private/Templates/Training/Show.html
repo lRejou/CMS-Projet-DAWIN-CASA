@@ -13,41 +13,36 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-	<div class="container-fluid d-flex justify-content-center align-items-center ">
-		<h1 class="row col-sm-12 text-center">{training.title}</h1>
+	<div class="container-fluid">
 
 		<f:flashMessages />
-		
-			<div class="row">
-				<f:translate key="tx_portfoliocs_domain_model_training.domain" />
-				 {training.domain} </div>
-			
-			<div class="row">
-				<f:translate key="tx_portfoliocs_domain_model_training.date_start" />
-				 {training.dateStart -> f:format.date()} </div>
-			
-			<div class="row">
-				<f:translate key="tx_portfoliocs_domain_model_training.date_end" />
-				 {training.dateEnd -> f:format.date()} </div>
-			
-			<div class="row">
-				<f:translate key="tx_portfoliocs_domain_model_training.degree" />
-				 {training.degree} </div>
-			
-			<div class="row">
-				<f:translate key="tx_portfoliocs_domain_model_training.lication" />
-				 {training.lication} </div>
-			
-			<div class="row">
-				<f:translate key="tx_portfoliocs_domain_model_training.description" />	
-				 <f:format.raw>{training.description} </f:format.raw> </div>
-			
-		
 
+		<h1 class="row col-12 text-center">{training.title}</h1> <hr>
 
+		<div class="row">
+				<div class="col-12">Date de début : <f:format.raw>{training.dateStart -> f:format.date()}</f:format.raw></div>
+				<div class="col-12">Date de fin : <f:format.raw>{training.dateEnd -> f:format.date()}</f:format.raw></div>
+				<div class="col-12">Description : <f:format.raw>{training.description}</f:format.raw></div>
+				<div class="col-12">Location : <f:format.raw>{training.lication}</f:format.raw></div>
+				<div class="col-12">Niveau : <f:switch expression="training.degree">
+						<f:case value="0">Bac</f:case>
+						<f:case value="1">Bac +1</f:case>
+						<f:case value="2">Bac +2</f:case>
+						<f:case value="3">Licence</f:case>
+						<f:case value="4">Master</f:case>
+						<f:case value="5">Doctorat</f:case>
+				</f:switch></div>
+				<div class="col-12">Domaine : 
+					<f:switch expression="training.domain">
+						<f:case value="0">Informatique</f:case>
+						<f:case value="1">Médecine.</f:case>
+						<f:case value="2">Environement</f:case>
+						<f:case default="TRUE">Domaine ? </f:case>
+					</f:switch>
+				</div>
+				<hr>
 
-
-		<f:link.action action="list">Back to list</f:link.action><br />
+		<f:link.action class="btn btn-primary" action="list">Back to list</f:link.action><br />
 	</div>
 	</f:section>
 </html>

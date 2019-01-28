@@ -15,19 +15,26 @@
 	<f:section name="content">
 	<div class="container">
 		<div class="row">
-			<h1 class="col-xl-12">Listing for Training</h1>
+			<h1>Listing for Training</h1>
+			<hr>
 		</div>
-
-			<f:flashMessages />
-			<f:widget.paginate objects="{trainings}" as="paginatedTrainings"  configuration="{itemsPerPage: 5, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 10}">
-				<f:for each="{paginatedTrainings}" as="training">
-					<div class="row">
-						<h2 class="xl-12">{training.title}</h2>
-						<h3><f:format.raw>{training.description} </f:format.raw> </h3>
-						<f:link.action action="show" arguments="{training : training}">View</f:link.action>
+		<f:flashMessages />
+		<f:widget.paginate objects="{trainings}" as="paginatedTrainings"  configuration="{itemsPerPage: 5, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 10}">
+			<f:for each="{paginatedTrainings}" as="training">
+				<div class="row" style="text-align: center">
+					<div class="col-xs-12 col-lg-4">
+						<f:format.raw>{training.title}</f:format.raw>
 					</div>
-				</f:for>
-			 </f:widget.paginate>
+					<div class="col-xs-12 col-lg-4 ">
+						<f:format.raw>{training.description}</f:format.raw>
+					</div>
+					<div class="col-xs-12 col-lg-4">
+						<f:link.action class="btn btn-primary" action="show" arguments="{training : training}">Visionner</f:link.action>
+					</div>
+				</div>
+				<hr>
+			</f:for>
+		</f:widget.paginate>
 		</div>
 	</f:section>
 </html>
