@@ -13,40 +13,30 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-		<h1>Listing for Profile</h1>
-
+		<h1>Liste des profils</h1>
+		<hr>
 		<f:flashMessages />
 
-		<table  class="tx_portfoliocs" >
-			<tr>
-				<th><f:translate key="tx_portfoliocs_domain_model_profile.name" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_profile.lastname" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_profile.birth_day" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_profile.driving_licence" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_profile.phone" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_profile.mail" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_profile.address" /></th>
-				<th><f:translate key="tx_portfoliocs_domain_model_profile.photo" /></th>
-				<th> </th>
-				<th> </th>
-			</tr>
-
 			<f:for each="{profiles}" as="profile">
-				<tr>
-					<td><f:link.action action="show" arguments="{profile : profile}"> {profile.name}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{profile : profile}"> {profile.lastname}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{profile : profile}"> {profile.birthDay -> f:format.date()}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{profile : profile}"> {profile.drivingLicence}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{profile : profile}"> {profile.phone}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{profile : profile}"> {profile.mail}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{profile : profile}"> {profile.address}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{profile : profile}"> {profile.photo.originalResource.name}</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{profile : profile}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{profile : profile}">Delete</f:link.action></td>
-				</tr>
+				<div class="row" style="text-align: center">
+					<div class="col-xs-12 col-lg-3">
+						<f:format.raw>
+								<f:image height="111" src="/fileadmin/user_upload/{profile.photo.originalResource.name}" alt="Photo de profil de {profile.name} {profile.lastname}" />
+						</f:format.raw>
+					</div>
+					<div class="col-xs-12 col-lg-3">
+						<f:format.raw>{profile.name}</f:format.raw>
+					</div>
+					<div class="col-xs-12 col-lg-3 ">
+						<f:format.raw>{profile.lastname}</f:format.raw>
+					</div>
+					<div class="col-xs-12 col-lg-3">
+						<f:link.action class="btn btn-primary" action="show" arguments="{profile : profile}">Visionner</f:link.action>
+					</div>
+				</div>
+				<hr>
 			</f:for>
-		</table>
 
-		<f:link.action action="new">New Profile</f:link.action>
+		<f:link.action action="new" class="btn btn-primary">New Profile</f:link.action>
 	</f:section>
 </html>

@@ -11,13 +11,35 @@
 			Show.html: keep
 
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
 	<f:section name="content">
-		<h1>Single View for Profile</h1>
+	<div class="container">
+		<div class="row">
+			<h1>Profil de {profile.name} {profile.lastname}</h1>
 
+			<f:format.raw>
+				<f:image height="200" src="/fileadmin/user_upload/{profile.photo.originalResource.name}" alt="Photo de profil de {profile.name} {profile.lastname}" />
+			</f:format.raw>
+			<hr>
+		</div>
 		<f:flashMessages />
-		<f:render partial="Profile/Properties" arguments="{profile:profile}" />
-		<f:link.action action="list">Back to list</f:link.action><br />
-		<f:link.action action="new">New Profile</f:link.action>
+		<div class="row">
+				<div class="col-12">Date de naissance : <f:format.raw>{profile.birthDay -> f:format.date()}</f:format.raw></div>
+				<div class="col-12">Numéro de téléphone : <f:format.raw>{profile.phone}</f:format.raw></div>
+				<div class="col-12">Adresse e-mail : <f:format.raw>{profile.mail}</f:format.raw></div>
+				<div class="col-12">Adresse postale : <f:format.raw>{profile.address}</f:format.raw></div>
+				<div class="col-12">Permis de conduire : 
+					<f:if condition="{profile.drivingLicence}==0">
+						<f:then>
+							Non
+						</f:then>
+						<f:else>
+							Oui
+						</f:else>
+					</f:if>
+				</div>
+				<hr>
+			<f:link.action class="btn btn-primary" action="list">Back to list</f:link.action>
+		</div>
+	</div>
 	</f:section>
 </html>
