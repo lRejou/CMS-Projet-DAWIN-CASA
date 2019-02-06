@@ -1,0 +1,41 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	This Template is responsible for creating a table of domain objects.
+
+	If you modify this template, do not forget to change the overwrite settings
+	in /Configuration/ExtensionBuilder/settings.yaml:
+	  Resources:
+		Private:
+		  Templates:
+			List.html: keep
+
+	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+	<f:section name="content">
+	
+	<!-- Search : <input type="text" id="search"/> -->
+	<f:form action="search" name="search" >
+		<f:form.textfield property="titre" id="titre" placeholder="Nom"/>
+		<f:form.textfield property="dateDebut" id="dateDebut" placeholder="Debut"/>
+		<f:form.textfield property="dateFin" id="dateFin" placeholder="Fin"/>
+		<f:form.submit value="OK" />
+	</f:form>
+		<h1>Liste des projets</h1>
+
+		<f:flashMessages />
+
+			<ul></ul>
+			<!-- <f:for each="{projets}" as="projet">
+					<f:format.raw>{projet.title}</f:format.raw>
+					<f:format.raw>{projet.description}</f:format.raw>
+					<f:format.raw>{projet.photo.originalResource.name}</f:format.raw>
+					<f:format.raw>{projet.url}</f:format.raw>
+					<f:format.raw>{projet.dateStart -> f:format.date()}</f:format.raw>
+					<f:format.raw>{projet.dateEnd -> f:format.date()}</f:format.raw>
+					<f:link.action class="btn btn-primary" action="show" arguments="{projet : projet}">Visionner</f:link.action>
+				
+			</f:for> -->
+
+	</f:section>
+</html>

@@ -19,7 +19,7 @@ namespace CS\PortfolioCs\Controller;
 /**
  * ProjetController
  */
-class ProjetController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
      * projetRepository
@@ -30,7 +30,7 @@ class ProjetController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     protected $projetRepository = null;
 
     /**
-     * action list
+     * action List
      * 
      * @return void
      */
@@ -73,11 +73,12 @@ class ProjetController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
     /**
      * action search
-     * 
+     * @param \CS\PortfolioCs\Domain\UseCase\Query\ProjectSearch $search
      * @return void
      */
-    public function searchAction()
+    public function searchAction(\CS\PortfolioCs\Domain\UseCase\Query\ProjectSearch $search)
     {
-
+        $projets = $this->projetRepository->findby(array('title' => $search->getTitre()));
+        $this->view->assign('projets', $projets);
     }
 }
