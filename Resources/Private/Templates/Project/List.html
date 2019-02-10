@@ -13,29 +13,46 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-	
-	<!-- Search : <input type="text" id="search"/> -->
-	<f:form action="search" name="search" >
-		<f:form.textfield property="titre" id="titre" placeholder="Nom"/>
-		<f:form.textfield property="dateDebut" id="dateDebut" placeholder="Debut"/>
-		<f:form.textfield property="dateFin" id="dateFin" placeholder="Fin"/>
-		<f:form.submit value="OK" />
-	</f:form>
-		<h1>Liste des projets</h1>
+		<div class="container">
+			<f:form action="search" name="search" >
+				<f:form.textfield property="titre" id="titre" placeholder="Nom"/>
+				<f:form.textfield property="dateDebut" id="dateDebut" placeholder="Debut"/>
+				<f:form.textfield property="dateFin" id="dateFin" placeholder="Fin"/>
+				<f:form.submit value="OK" />
+			</f:form>
+			<h1>Liste des projets</h1>
+			<f:flashMessages />
 
-		<f:flashMessages />
-
-			<ul></ul>
-			<!-- <f:for each="{projets}" as="projet">
-					<f:format.raw>{projet.title}</f:format.raw>
-					<f:format.raw>{projet.description}</f:format.raw>
-					<f:format.raw>{projet.photo.originalResource.name}</f:format.raw>
-					<f:format.raw>{projet.url}</f:format.raw>
-					<f:format.raw>{projet.dateStart -> f:format.date()}</f:format.raw>
-					<f:format.raw>{projet.dateEnd -> f:format.date()}</f:format.raw>
-					<f:link.action class="btn btn-primary" action="show" arguments="{projet : projet}">Visionner</f:link.action>
-				
-			</f:for> -->
-
+			<f:widget.paginate objects="{projets}" as="paginatedprojets"  configuration="{itemsPerPage: 5, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 10}">
+				<f:for each="{paginatedprojets}" as="projet">
+					<div class="row" style="text-align: center">
+						<div class="col-xs-12 col-lg-3">
+							<f:format.raw>
+									<f:image height="111" src="/fileadmin/user_upload/{projet.photo.originalResource.name}" alt="Photo de profil de {profile.name} {profile.lastname}" />
+							</f:format.raw>
+						</div>
+						<div class="col-xs-12 col-lg-3">
+							<f:format.raw>{projet.title}</f:format.raw>
+						</div>
+						<div class="col-xs-12 col-lg-3 ">
+							<f:format.raw>{projet.description}</f:format.raw>
+						</div>
+						<div class="col-xs-12 col-lg-3 ">
+							<f:format.raw>{projet.dateStart -> f:format.date()}</f:format.raw>
+						</div>
+						<div class="col-xs-12 col-lg-3 ">
+							<f:format.raw>{projet.dateEnd -> f:format.date()}</f:format.raw>
+						</div>
+						<div class="col-xs-12 col-lg-3 ">
+							<f:format.raw>{projet.url}</f:format.raw>
+						</div>
+						<div class="col-xs-12 col-lg-3">
+							<f:link.action class="btn btn-primary" action="show" arguments="{projet : projet}">Visionner</f:link.action>
+						</div>
+					</div>
+					<hr>
+				</f:for>
+			</f:widget.paginate>
+		</div>
 	</f:section>
 </html>
