@@ -78,7 +78,18 @@ class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function searchAction(\CS\PortfolioCs\Domain\UseCase\Query\ProjectSearch $search)
     {
-        $projets = $this->projetRepository->findby(array('title' => $search->getTitre()));
+        // $projets = $this->projetRepository->findByTitle($search->getTitre());
+        // var_dump($projets);
+        $projets=[];
+        $projetsTab = $this->projetRepository->findAll();
+        foreach ($projetsTab as $projet) {
+            if($projet->getTitle() == $search->getTitre() 
+                || $projet->getDateStart() == $search->getDateDebut() 
+                || $projet->getDateEnd() == $search->getDateFin()){
+                array_push ($projets, $projet);
+            }
+        }
+        //$projets = $this->projetRepository->findby(array('title' => $search->getTitre()));
         $this->view->assign('projets', $projets);
     }
 }

@@ -65,11 +65,24 @@ class TrainingController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
     /**
      * action search
-     * 
+     * @param \CS\PortfolioCs\Domain\UseCase\Query\TrainingSearch $search
      * @return void
      */
-    public function searchAction()
+    public function searchAction(\CS\PortfolioCs\Domain\UseCase\Query\TrainingSearch $search)
     {
-
+        $trainings=[];
+        $trainingsTab = $this->trainingRepository->findAll();
+        foreach ($trainingsTab as $training) {
+            if($training->getTitle() == $search->getTitre() 
+                || $training->getDateStart() == $search->getDateDebut() 
+                || $training->getDateEnd() == $search->getDateFin() 
+                || $training->getDomain() == $search->getDomaine() 
+                || $training->getDateEnd() == $search->getDateFin() 
+                || $training->getLication() == $search->getLocation() 
+                || $training->getDegree() == $search->getDegres()){
+                array_push ($trainings, $training);
+            }
+        }
+        $this->view->assign('trainings', $trainings);
     }
 }
