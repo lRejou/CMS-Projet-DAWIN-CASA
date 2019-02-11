@@ -21,6 +21,13 @@ namespace CS\PortfolioCs\Domain\Model;
  */
 class Training extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
+    const DEGREE_BAC = 0;
+    const DEGREE_BAC_1 = 1;
+    const DEGREE_BAC_2 = 2;
+    const DEGREE_LICENCE = 3;
+    const DEGREE_MASTER = 4;
+    const DEGREE_DOCTORAT = 5;
+
     /**
      * domaine
      * 

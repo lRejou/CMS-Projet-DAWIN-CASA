@@ -1,4 +1,7 @@
 <?php
+
+use Classes\Domaine\Training;
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:portfolio_cs/Resources/Private/Language/locallang_db.xlf:tx_portfoliocs_domain_model_training',
@@ -149,7 +152,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['Bac', 0],['Bac +1', 1],['Bac+2', 2],['Licence', 3],['Master', 4],['Doctorat', 5]
+                    ['Bac', Training.DEGREE_BAC],['Bac +1', Training.DEGREE_BAC_1],['Bac+2', Training.DEGREE_BAC_2],['Licence', Training.DEGREE_LICENCE],['Master', Training.DEGREE_MASTER],['Doctorat', Training.DEGREE_DOCTORAT]
                 ],
                 'size' => 1,
                 'maxitems' => 1,
