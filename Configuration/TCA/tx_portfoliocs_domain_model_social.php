@@ -113,7 +113,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['-- Label --', 0],
+                    ['Facebook', 0],['Twitter', 1],['Linkedin', 2], ['Instagram', 3], ['Snapchat', 4]
                 ],
                 'size' => 1,
                 'maxitems' => 1,

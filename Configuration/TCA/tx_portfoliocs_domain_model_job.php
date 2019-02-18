@@ -171,7 +171,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['-- Label --', 0],
+                    ['CDI', 0],['CDD',1],['Intérim',2],['Freelance',3]
                 ],
                 'size' => 1,
                 'maxitems' => 1,

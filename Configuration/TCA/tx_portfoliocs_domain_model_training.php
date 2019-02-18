@@ -113,7 +113,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['Informatique', 0],['Médecine',1],['Environnement',2],['Transport',3],['Sport',4],['Litterature',5]
+                    ['Informatique', 0],['Médecine',1],['Environnement',2],['Transport',3],['Sport',4],['Litterature',5], ['Marketing',6]
                 ],
                 'size' => 1,
                 'maxitems' => 1,
