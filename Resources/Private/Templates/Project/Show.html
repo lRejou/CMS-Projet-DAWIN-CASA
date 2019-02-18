@@ -1,0 +1,48 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	This Template is responsible for displaying a single view for a domain object
+
+	If you modify this template, do not forget to change the overwrite settings
+	in /Configuration/ExtensionBuilder/settings.yaml:
+	  Resources:
+		Private:
+		  Templates:
+			Show.html: keep
+
+	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+	<f:section name="content">
+	<div class="container">
+		<div class="row">
+			<h1>{projet.title}</h1>
+
+			<f:format.raw>
+				<f:image height="200" src="/fileadmin/user_upload/{projet.photo.originalResource.name}" alt="Photo de profil de {profile.name} {profile.lastname}" />
+			</f:format.raw>
+			<hr>
+		</div>
+		<f:flashMessages />
+		<div class="row">
+			<div class="col-12">Projet débuté le {projet.dateStart -> f:format.date()} et terminé le {projet.dateEnd -> f:format.date()}</div>
+			<div class="col-12">Description : <f:format.raw>{projet.description}</f:format.raw></div>
+			<div class="col-12">Lien : <f:format.raw>projet.url}</f:format.raw></div>
+		</div>
+		<hr>
+		<f:link.action class="btn btn-primary" action="list">Back to list</f:link.action>
+	</div>
+	</f:section>
+<!-- 
+	<f:section name="content">
+			<h1>{projet.title}</h1>
+
+			<f:flashMessages />
+			<img width="150px" src="/fileadmin/user_upload/{projet.photo.originalResource.name}" alt="Photo du projet"><br />
+			<f:format.raw>Projet débuté le {projet.dateStart -> f:format.date()} et terminé le {projet.dateEnd -> f:format.date()}</f:format.raw><br />
+			<f:format.raw>Description : </f:format.raw><br />
+			<f:format.raw>{projet.description}</f:format.raw>
+			<f:format.raw>{projet.url}</f:format.raw>
+
+			<f:link.action action="list" class="btn btn-primary">Back to list</f:link.action>
+	</f:section> -->
+</html>
